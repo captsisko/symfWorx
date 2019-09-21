@@ -3,5 +3,9 @@
 {% block title %}Fibonacci{% endblock %}
 
 {% block body %}
-    <div>{{ step }} step Fibonacci series = <u><b>{{ fibonacci }}</b></u></div>
+    {% if fibonacci is empty %}
+        <div>Please supply a numerical argument in the url like <b><i><a href='http://symfwrox.com/index.php/5'>http://symfwrox.com/index.php/5</a></i></b></div>
+    {% else %}
+        <div>{{ step }} step Fibonacci series = <u><b>{{ fibonacci }}</b></u></div>
+    {% endif %}
 {% endblock %}

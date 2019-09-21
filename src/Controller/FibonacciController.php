@@ -10,9 +10,10 @@
     class FibonacciController extends Controller{
 
         /**
+         * @Route("/")
          * @Route("/{step}")
          */
-        function index($step){
+        function index($step=0){
             $fib = $this->fibonacci($step);
 
             return $this->render('fibonacci.html.twig', array('fibonacci' => $fib, 'step' => $step));
